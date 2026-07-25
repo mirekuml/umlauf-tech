@@ -1,0 +1,27 @@
+# Mirek Umlauf — umlauf.tech
+
+> Miroslav (Mirek) Umlauf is a Fractional Chief Data & AI Officer and Board Advisor based in Prague, Czech Republic. Twenty years delivering data and AI in global, complex environments: two IPOs (NYSE, then London), dozens of integrated acquisitions, former Chief Data Officer of a global consumer cybersecurity business.
+
+## Who he is
+
+- Fractional Chief Data & AI Officer and Board Advisor for companies that didn't grow up with large data teams
+- Assistant Professor at FIS VŠE Prague (Prague University of Economics and Business) — Leadership in IT, Enterprise and Data Architecture, Lean Manufacturing and Data, Data-driven Decision-Making in Manufacturing
+- Board Director (Sponsorships & Events), DAMA Czech Republic — data & AI governance community
+- President, IMD Alumni Club Czech Republic & Slovakia
+- Co-founder of Nuefis (managed data product services, nuefis.com) and LOLOLU; ventures in build in legal tech and board tech
+- Mentor via Femme Palette; mentoring training at IMD and UC Berkeley
+
+## What he does
+
+Applies research to businesses: data and AI strategy that survives execution, non-invasive data governance, decision-intelligence systems for operations (including manufacturing and IoT), data collection design, and building internal data teams that outlast the engagement. Technology-critical: sizes technology to the real problem, avoids vendor lock-in the client didn't choose.
+
+## Pages
+
+- [Home](https://umlauf.tech/): positioning, expertise, selected engagements and outcomes, teaching and community
+- [Essays](https://umlauf.tech/essays/): essays on data and AI in real organisations
+- [I built BI for two IPOs. Here's what I got wrong.](https://umlauf.tech/essays/i-built-bi-for-two-ipos.html): featured essay on classifying problems before solving them
+
+## Contact
+
+- Email: mirek@umlauf.tech
+- LinkedIn: https://cz.linkedin.com/in/umlauf

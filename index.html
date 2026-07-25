@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mirek Umlauf — Fractional Chief Data & AI Officer · Board Advisor</title>
+<meta name="description" content="Mirek Umlauf — Fractional Chief Data & AI Officer and Board Advisor. Twenty years delivering data and AI through two IPOs, dozens of acquisitions, and a global CDO seat.">
+<meta property="og:title" content="Mirek Umlauf — Fractional Chief Data & AI Officer · Board Advisor">
+<meta property="og:description" content="Data and AI in the places where technology and people both decide.">
+<meta property="og:url" content="https://umlauf.tech/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f3;
+    --bg-alt: #f2efe7;
+    --ink: #1a1a1a;
+    --ink-mid: #4a4a4a;
+    --ink-quiet: #8c8676;
+    --accent: #7a1f1f;
+    --rule: #e6dfc9;
+    --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .nav {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 32px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--ink-quiet);
+    letter-spacing: 0.04em;
+  }
+  .nav .brand {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav .links a {
+    color: var(--ink-mid);
+    text-decoration: none;
+    margin-left: 28px;
+    transition: color .15s;
+  }
+  .nav .links a:hover { color: var(--accent); }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 40px 40px;
+  }
+
+  /* Hero */
+  .hero-top {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin: 0 0 12px;
+  }
+  .hero .role {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    margin: 0 0 14px;
+  }
+  .hero .tagline {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.4;
+    color: var(--ink-mid);
+    margin: 0 0 40px;
+  }
+  .portrait {
+    flex: 0 0 150px;
+    height: 190px;
+    background: var(--bg-alt);
+    border: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-quiet);
+    margin-top: 8px;
+  }
+  .hero p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 0 0 20px;
+  }
+  .scrutiny {
+    margin: 36px 0 8px;
+  }
+  .scrutiny .big {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1.25;
+    display: block;
+    margin-bottom: 12px;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+  .hero .gns {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--accent);
+    margin-top: 26px;
+  }
+  .credibility {
+    margin-top: 44px;
+    padding-top: 26px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--sans);
+    font-size: 11.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-quiet);
+    line-height: 1.9;
+  }
+
+  /* Two statements */
+  .statements {
+    padding: 88px 0 0;
+  }
+  .statements p {
+    font-family: var(--serif);
+    font-size: 23px;
+    line-height: 1.5;
+    margin: 0 0 32px;
+    color: var(--ink);
+  }
+  .statements p:last-child { margin-bottom: 0; }
+  .statements p::before {
+    content: "";
+    display: block;
+    width: 40px;
+    border-top: 2px solid var(--accent);
+    margin-bottom: 18px;
+  }
+
+  section { padding: 88px 0 0; }
+
+  section h2 {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-quiet);
+    margin: 0 0 36px;
+  }
+
+  section p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 0 0 20px;
+  }
+
+  /* Expertise — prominent block */
+  .prominent {
+    padding-bottom: 40px;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 40px;
+  }
+  .prominent h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.25;
+    margin: 0 0 16px;
+  }
+  .prominent p {
+    font-size: 19px;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* Capability blocks */
+  .cap-block {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .cap-block:last-child { border-bottom: none; padding-bottom: 0; }
+  .cap-block h4 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 1.3;
+    margin: 0 0 6px;
+  }
+  .cap-block p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-mid);
+    margin: 0;
+  }
+
+  /* Engagement list */
+  .eng-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 12px;
+  }
+  .eng-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .eng-list li:first-child { padding-top: 0; }
+  .eng-list .who { font-weight: 500; }
+  .eng-list .what { color: var(--ink-mid); }
+  .refs-note {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-quiet);
+    margin: 0 0 28px;
+  }
+
+  section p a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    transition: color .15s, border-color .15s;
+  }
+  section p a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .conflict-note {
+    font-size: 16px;
+    color: var(--ink-mid);
+  }
+
+  /* Close */
+  .close-line {
+    margin-top: 88px;
+    padding-top: 48px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--serif);
+    font-size: 19px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+  .close-line .policy {
+    font-style: italic;
+    color: var(--ink-mid);
+    margin-bottom: 16px;
+  }
+  .close-line a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    transition: color .15s, border-color .15s;
+  }
+  .close-line a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  footer {
+    max-width: 720px;
+    margin: 88px auto 0;
+    padding: 64px 40px 48px;
+    border-top: 1px solid var(--rule);
+  }
+  footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px 56px;
+    margin-bottom: 24px;
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--ink-mid);
+  }
+  footer .label {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 10.5px;
+    color: var(--ink-quiet);
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  footer a { color: var(--ink-mid); text-decoration: none; transition: color .15s; }
+  footer a:hover { color: var(--accent); }
+  footer .copyright {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-quiet);
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+  }
+
+  @media (max-width: 720px) {
+    .nav { padding: 24px 24px; }
+    .nav .links a { margin-left: 18px; }
+    main { padding: 56px 24px 32px; }
+    .hero-top { flex-direction: column-reverse; gap: 24px; }
+    .portrait { flex: none; width: 120px; height: 150px; }
+    .hero h1 { font-size: 42px; }
+    .hero .tagline { font-size: 17px; margin-bottom: 32px; }
+    .scrutiny .big { font-size: 23px; }
+    .statements { padding-top: 60px; }
+    .statements p { font-size: 19px; }
+    section { padding-top: 60px; }
+    .prominent h3 { font-size: 22px; }
+    .prominent p { font-size: 17px; }
+    .close-line { font-size: 17px; margin-top: 60px; padding-top: 36px; }
+    footer { padding: 48px 24px 32px; margin-top: 60px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="brand">Mirek Umlauf</a>
+  <div class="links">
+    <a href="#expertise">Expertise</a>
+    <a href="#work">Work</a>
+    <a href="#teaching">Teaching</a>
+    <a href="mailto:mirek@umlauf.tech">Contact</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- 1. Hero -->
+  <header class="hero">
+    <div class="hero-top">
+      <div>
+        <h1>Mirek Umlauf</h1>
+        <p class="role">Fractional Chief Data &amp; AI Officer · Board Advisor</p>
+        <p class="tagline">Data and AI in the places where technology and people both decide.</p>
+      </div>
+      <div class="portrait">Portrait</div>
+    </div>
+
+    <p>Twenty years delivering data and AI in global, complex environments — two IPOs (NYSE, then London), dozens of integrated acquisitions globally, Chief Data Officer of a global consumer cybersecurity business. The industries varied; the pattern didn't.</p>
+
+    <p>Today I sit on the other side of the table — alongside boards and leadership teams, often in companies that didn't grow up with large data teams. Teaching and research at FIS VŠE keeps the practice honest.</p>
+
+    <div class="scrutiny">
+      <span class="big">Technology deserves scrutiny, not faith.</span>
+      <p>Count on me to ask the hard questions before the expensive decisions: name the real problem, size the technology to it, match the architecture to your skills — and choose deliberately what gets locked in. Commitment can build advantage; it just shouldn't be a vendor choosing where you commit.</p>
+    </div>
+
+    <p class="gns">Geek – Nerd – Suit: fluent in research, fluent in data, fluent in the boardroom.</p>
+
+    <div class="credibility">
+      Assistant Professor, FIS VŠE Prague &nbsp;·&nbsp; President, IMD Alumni Club CZ &amp; SK &nbsp;·&nbsp; Director, DAMA Czech Chapter
+    </div>
+  </header>
+
+  <!-- 2. Two statements -->
+  <div class="statements">
+    <p>Companies where data and AI are decided by people who understand both the technology and the business — and where working with them makes people grow.</p>
+    <p>Execute at a cost the business would choose again. Bring what research actually knows into the Monday-morning business. Leave every team — and myself — more capable each year.</p>
+  </div>
+
+  <!-- 3. Expertise -->
+  <section id="expertise">
+    <h2>Expertise</h2>
+
+    <div class="prominent">
+      <h3>Research in one hand, the P&amp;L in the other</h3>
+      <p>I apply research to businesses — bringing what data and AI science actually knows into functions that have to use it Monday morning. And I develop the same people to get measurably better in both halves of the job: the technology <em>and</em> the leadership.</p>
+    </div>
+
+    <div class="cap-block">
+      <h4>Patterns — from architecture to the anatomy of the firm</h4>
+      <p>Technology has proven architecture patterns; so does everything around it — how teams are shaped, how change takes hold, how business model and process connect to data. I diagnose them together, as one anatomy. Structure creates outcomes: everyone says they want to be data-driven; few build the structure that produces it. That's why the fix is usually not another platform.</p>
+    </div>
+
+    <div class="cap-block">
+      <h4>Designing the data you'll wish you had</h4>
+      <p>A "data problem" is usually a problem about how the company sees itself — what counts as a customer, where the margin sits. I know what to ask the data, which answers to mistrust — and that missing data can't be backfilled. So I design collection and capture — process events, customer signals, IoT and sensor data — for two readers: your people, and the AI agents that help them run the business. Both need to know, fast, what's actually going on.</p>
+    </div>
+
+    <div class="cap-block">
+      <h4>AI and decision systems for operations</h4>
+      <p>Decision-intelligence layers on production, operations, and customer data — systems that help people see earlier and decide faster. Especially in manufacturing and industrial environments, where data and decisions are most directly tied.</p>
+    </div>
+
+    <div class="cap-block">
+      <h4>Data &amp; AI governance, non-invasive</h4>
+      <p>Data treated as a product, ownership inside operations, governance that formalises the accountability already in the business. The discipline I also serve as Director of the DAMA Czech Chapter.</p>
+    </div>
+
+    <div class="cap-block">
+      <h4>Teams that survive me — and experts I don't have to search for</h4>
+      <p>Engineers, analysts, and platform people who deliver in operationally-led environments. When the work needs a true specialist, I bring in someone I've known for years — not a CV from a database. And I work through the incumbent CIO and IT leadership, not around them.</p>
+    </div>
+  </section>
+
+  <!-- 4. Work & ventures -->
+  <section id="work">
+    <h2>Work &amp; ventures</h2>
+    <ul class="eng-list">
+      <li><span class="who">Construction logistics group, €1bn</span> — <span class="what">IT and operating-model transformation, Conway's law in practice</span></li>
+      <li><span class="who">Global industrial controls manufacturer</span> — <span class="what">introduction of BI</span></li>
+      <li><span class="who">CEE pharmacy retail chain</span> — <span class="what">data governance and big data training</span></li>
+      <li><span class="who">Private clinic</span> — <span class="what">multi-year ~$10M digital transformation</span></li>
+      <li><span class="who">Mid-sized manufacturer</span> — <span class="what">IT transformation</span></li>
+      <li><span class="who">Manufacturing companies</span> — <span class="what">customized data modeling training</span></li>
+      <li><span class="who">Marketing research firm</span> — <span class="what">data warehouse consolidation</span></li>
+      <li><span class="who">European fintech</span> — <span class="what">first analytical data layer</span></li>
+      <li><span class="who">Legal tech</span> — <span class="what">knowledge engineering: ontologies and knowledge graphs for complex legal agendas</span></li>
+    </ul>
+    <h2 style="margin-top: 48px;">Selected outcomes</h2>
+    <ul class="eng-list">
+      <li><span class="who">A data warehouse the client was about to buy — and didn't need.</span> <span class="what">Avoided: ≈ €200,000.</span></li>
+      <li><span class="who">A transformation programme reduced by 40%</span> — <span class="what">with no loss of outcome.</span></li>
+      <li><span class="who">Millions of USD in licence savings</span> — <span class="what">after migrating a large-scale data warehouse to open source.</span></li>
+      <li><span class="who">Hundreds of spreadsheets retired</span> — <span class="what">right information, right time, one source.</span></li>
+      <li><span class="who">Month-end close from day 15 to day 3.</span></li>
+      <li><span class="who">A full data warehouse consolidating two ERPs, first executive dashboard in production</span> — <span class="what">three months from contract.</span></li>
+      <li><span class="who">IPO data readiness in four months</span> — <span class="what">passed every audit.</span></li>
+      <li><span class="who">Data due diligence for an acquisition</span> — <span class="what">delivered in three weeks.</span></li>
+      <li><span class="who">Patient analytics for 3,000 patients a month</span> — <span class="what">healthcare-grade privacy compliance at €3,000 a year.</span></li>
+      <li><span class="who">An internal team — business and IT trained together</span> — <span class="what">runs their data warehouse themselves.</span></li>
+    </ul>
+    <p class="refs-note">Named references — and my exact role in each outcome — available in conversation.</p>
+
+    <p>Entrepreneurship is the other half. I've co-founded four data companies. One failed and paid for the lesson; <a href="https://nuefis.com">Nuefis</a> works and stays profitable; two are in build — legal tech and board tech. No unicorn stories.</p>
+  </section>
+
+  <!-- 5. Teaching & community -->
+  <section id="teaching">
+    <h2>Teaching &amp; community</h2>
+
+    <div class="cap-block">
+      <h4>FIS VŠE — Assistant Professor</h4>
+      <p>Leadership in IT, Enterprise and Data Architecture, Lean Manufacturing and Data, Data-driven Decision-Making in Manufacturing — across the master's and IT Management MBA. Research projects and bringing AI into teaching itself, working with large automotive groups, companies like Siemens, and vendors of data technologies.</p>
+    </div>
+
+    <div class="cap-block">
+      <h4>Controlling.cz — hard data-skills training and data analytics</h4>
+      <p>Years of training practice before academia. Together, 1,500+ executives and students.</p>
+    </div>
+
+    <div class="cap-block">
+      <h4>Mentoring</h4>
+      <p>Board and management members, FIS students, career inflection points via Femme Palette. My own training: IMD and UC Berkeley.</p>
+    </div>
+
+    <div class="cap-block">
+      <h4>DAMA Czech Chapter — Director, volunteer</h4>
+      <p>Advancing data &amp; AI governance as a discipline in the region.</p>
+    </div>
+
+    <div class="cap-block">
+      <h4>IMD Alumni Club CZ &amp; SK — President, volunteer</h4>
+      <p>A network of people who share the belief that learning doesn't stop at the diploma.</p>
+    </div>
+  </section>
+
+  <!-- 6. Close -->
+  <div class="close-line">
+    <p class="policy">A few clients at a time, by design — and everything documented, so nothing depends on my calendar.</p>
+    <p>No newsletter, no funnel. If you're facing a decision like these, write me: <a href="mailto:mirek@umlauf.tech">mirek@umlauf.tech</a></p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="row">
+    <div>
+      <span class="label">Get in touch</span>
+      <a href="mailto:mirek@umlauf.tech">mirek@umlauf.tech</a> &nbsp;·&nbsp; <a href="https://cz.linkedin.com/in/umlauf">LinkedIn</a> &nbsp;·&nbsp; <a href="/essays/">Essays</a>
+    </div>
+    <div>
+      <span class="label">Affiliations</span>
+      FIS VŠE  ·  IMD Alumni Club CZ &amp; SK  ·  DAMA Czech Chapter
+    </div>
+    <div>
+      <span class="label">Companies</span>
+      <a href="https://nuefis.com">Nuefis</a>  ·  <a href="https://lololu.cz">LOLOLU</a>
+    </div>
+  </div>
+  <div class="copyright">© 2026 Mirek Umlauf · Built for boards, not bots.</div>
+</footer>
+
+<!-- Cloudflare Web Analytics — paste your token below and uncomment:
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_TOKEN_HERE"}'></script>
+-->
+
+</body>
+</html>

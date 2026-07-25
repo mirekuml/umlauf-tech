@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>I built BI for two IPOs. Here's what I got wrong. — Mirek Umlauf</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #faf8f3;
+    --bg-alt: #f2efe7;
+    --bg-quiet: #ede9dd;
+    --ink: #1a1a1a;
+    --ink-muted: #5a5a5a;
+    --ink-faint: #8a8a8a;
+    --rule: #e3ddcf;
+    --accent: #7a1f1f;
+    --accent-soft: #b54848;
+    --serif: "Source Serif 4", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: var(--sans); background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+  a:hover { opacity: 0.65; }
+
+  nav.top {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 28px 32px; max-width: 1200px; margin: 0 auto; font-size: 15px;
+  }
+  nav.top .logo { font-family: var(--serif); font-weight: 600; font-size: 19px; color: var(--ink); border: none; }
+  nav.top .menu a { color: var(--ink-muted); border: none; font-size: 14.5px; margin-left: 24px; }
+  nav.top .menu a:hover { color: var(--ink); opacity: 1; }
+  hr.divider { border: none; height: 1px; background: var(--rule); max-width: 1200px; margin: 0 auto; }
+
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 32px 80px;
+  }
+
+  .crumb {
+    font-size: 13px;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 28px;
+  }
+  .crumb a { color: var(--ink-faint); border: none; }
+  .crumb a:hover { color: var(--accent); opacity: 1; }
+
+  h1.essay-title {
+    font-family: var(--serif);
+    font-size: 48px;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .dek {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--ink-muted);
+    margin: 0 0 40px;
+    font-weight: 400;
+  }
+
+  .byline {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 48px;
+    font-size: 14px;
+    color: var(--ink-muted);
+  }
+  .byline .author { color: var(--ink); font-weight: 500; }
+  .byline .sep { color: var(--ink-faint); }
+
+  .essay-body p {
+    font-family: var(--serif);
+    font-size: 19px;
+    line-height: 1.7;
+    margin: 0 0 26px;
+    color: var(--ink);
+  }
+  .essay-body p:first-of-type::first-letter {
+    font-family: var(--serif);
+    font-size: 64px;
+    float: left;
+    line-height: 0.9;
+    padding: 8px 12px 0 0;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .essay-body h2 {
+    font-family: var(--serif);
+    font-size: 28px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin: 56px 0 24px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .essay-body strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .essay-body em { font-style: italic; }
+  .essay-body blockquote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 21px;
+    line-height: 1.55;
+    border-left: 4px solid var(--accent);
+    padding-left: 24px;
+    margin: 32px 0;
+    color: var(--ink);
+  }
+  .essay-body blockquote p { font-family: var(--serif); margin: 0; font-size: 21px; line-height: 1.55; }
+
+  .end-rule {
+    border: none;
+    height: 1px;
+    background: var(--rule);
+    margin: 56px 0 40px;
+  }
+
+  .author-box {
+    background: var(--bg-quiet);
+    padding: 32px 36px;
+    border-left: 4px solid var(--accent);
+    margin-top: 48px;
+  }
+  .author-box h3 {
+    font-family: var(--serif);
+    font-size: 20px;
+    margin: 0 0 12px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .author-box p {
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    margin: 0 0 14px;
+  }
+  .author-box .links {
+    display: flex;
+    gap: 20px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+  .author-box .links a { font-size: 14px; }
+
+  .more-essays {
+    margin-top: 72px;
+    padding-top: 40px;
+    border-top: 1px solid var(--rule);
+  }
+  .more-essays h4 {
+    font-family: var(--sans);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ink-muted);
+    font-weight: 600;
+    margin: 0 0 24px;
+  }
+  .more-essay {
+    padding: 18px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .more-essay:last-child { border-bottom: 1px solid var(--rule); }
+  .more-essay a {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--ink);
+    border: none;
+    display: block;
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .more-essay a:hover { color: var(--accent); }
+  .more-essay .me-dek { font-size: 14px; color: var(--ink-muted); }
+
+  footer {
+    background: var(--bg-alt);
+    padding: 48px 0;
+    font-size: 13px;
+    color: var(--ink-faint);
+    text-align: center;
+    margin-top: 64px;
+  }
+
+  @media (max-width: 640px) {
+    h1.essay-title { font-size: 34px; }
+    .dek { font-size: 19px; }
+    .essay-body p { font-size: 17.5px; }
+    article { padding: 32px 24px 48px; }
+    nav.top .menu a { margin-left: 14px; font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <a class="logo" href="/">Mirek Umlauf</a>
+  <div class="menu">
+    <a href="/">Home</a>
+    <a href="/essays/">Essays</a>
+    <a href="/#teaching">About</a>
+    <a href="mailto:mirek@umlauf.tech">Contact</a>
+  </div>
+</nav>
+
+<hr class="divider" />
+
+<article>
+
+  <div class="crumb"><a href="/">Home</a> &nbsp;/&nbsp; <a href="/essays/">Essays</a></div>
+
+  <h1 class="essay-title">I built BI for two IPOs. Here's what I got wrong.</h1>
+
+  <p class="dek">The hardest part of data and AI work isn't solving the problem. It's classifying it. I learned that the expensive way.</p>
+
+  <div class="byline">
+    <span class="author">Mirek Umlauf</span>
+    <span class="sep">·</span>
+    <span>May 2026</span>
+    <span class="sep">·</span>
+    <span>~9 minute read</span>
+  </div>
+
+  <div class="essay-body">
+
+    <p>I spent twelve years inside a global consumer cybersecurity business, building business intelligence through a NYSE listing and then, years later, a London one. At that scale, the failures you survive teach you more than the successes you ship — because the failures stay paid-for long after the press release goes out. The ones I want to talk about here are the kind no consultant writes essays about: the moments I solved the wrong kind of problem, and made the engineering elegant in the wrong place.</p>
+
+    <p>I now run advisory engagements as a fractional Chief Data and AI Officer for boards looking at exactly the same kind of decisions I once made — usually before the diagnosis has happened. The thing I sell, when I'm honest, is a calibrated paranoia about what <em>kind</em> of problem is sitting in front of us. That paranoia was bought at scale, in a real company, by my own hands. Here is how.</p>
+
+    <h2>Mistake one — the wrong-layer mistake</h2>
+
+    <p>My BI team needed to report on business events — subscriptions, renewals, cancellations, refunds — that should have come, cleanly and authoritatively, from the billing system. They didn't. Either the billing system didn't emit them in a form anyone outside its own team wanted to wrangle, or the work to fix that upstream felt slower than just routing around it.</p>
+
+    <p>The easy answer, the one we took, was: <em>we can reconstruct those events from logs</em>. The data is technically there. We have engineers. We can do it.</p>
+
+    <p>We did. And we paid for it every day, for years.</p>
+
+    <p>Deriving operational business events from logs in the analytical layer creates exactly the kind of brittle, slow, dependency-laden process you would never design on purpose. Every time the source system changed shape — a deployment, a refactor, a new product line — our derivation broke or drifted. The BI operations team spent more time reconciling derived events back to the source-of-truth than producing analysis. Data-quality conversations stopped being conversations and became standing meetings. The cost wasn't the engineering. The cost was the trust: a number had to be defended every single time it appeared.</p>
+
+    <p>The same period produced a sibling mistake, harder to admit. We let the data warehouse become the master record for <em>customer</em> — the golden record — and then, because the data was there and the marketing team needed it, we let the warehouse double as a campaign-execution system. Two things that should have lived in the operational stack quietly took up residence in the analytical one. The warehouse stopped being a place where insight was synthesised and started being a place that operations depended on to run the business. When it slowed down, marketing slowed down. When it had an outage, the company had one.</p>
+
+    <p>Both mistakes had the same shape. We let the analytical layer compensate for a gap in an operational system, instead of insisting the gap be closed where it actually lived. We told ourselves we were being pragmatic. We were being polite. The cost of that politeness was carried by everyone who came after us.</p>
+
+    <p><strong>The lesson, written in the only language that teaches it: not every truth belongs in the analytical layer. Some truths belong upstream. The job of a data leader is sometimes to refuse the request, point at the source system, and force the work back to where it should live.</strong></p>
+
+    <p>The classifier I now apply to any new request:</p>
+
+    <blockquote><p>If the source system is broken or incomplete, should we be paying to fix it there — or paying ten times that amount to compensate for it here?</p></blockquote>
+
+    <p>Almost always, the honest answer is <em>fix it there</em>. Almost always, the political answer is <em>compensate here</em>. The data leader's job is to refuse the political answer when it is the wrong one — and to make that refusal cheap enough for the rest of the organisation to accept.</p>
+
+    <h2>Mistake two — the cooperation problem dressed as a tech problem</h2>
+
+    <p>The second pattern is more painful, because it's harder to see. It looks like a tech problem. It has tickets. It has architectural diagrams. It has a roadmap. But the actual cause is that two parts of the organisation aren't allowed to, or aren't equipped to, work together — and the engineering is silently absorbing the cost.</p>
+
+    <p>The version that taught me to spot this had two halves, running in parallel.</p>
+
+    <p>The first half was Finance. Finance pulled almost everything out of the analytical cubes into their own spreadsheets — into what I now call <em>spreadsheet hell</em> — because they wanted full control over the numbers and didn't want to coordinate with IT to evolve the source. Every month they made manual adjustments, froze their copies, and reconciled against the live data, which had moved. The cubes ground under the load of repeated full-data extracts. The monthly close turned into a forensic exercise.</p>
+
+    <p>From inside IT, this looked like a <em>performance</em> problem. We tried to fix it with better caching, smarter partitioning, friendlier extracts. None of it landed — because the real problem was that Finance and IT did not have a working relationship in which evolving the analytical layer together was a normal activity. Finance was working around us. We were optimising for the workaround.</p>
+
+    <p>The second half was inside the engineering team itself. We had more than twenty developers, an overloaded delivery queue, and a frustrated business. From the outside it looked like a capacity problem, or an estimation problem. The truth was that knowledge of the system was held by exactly one person. The other developers were each working in their own corner of the codebase, without peer review, without git used the way git is meant to be used, without incident tracking that produced learning, and without any mechanism by which one person's insight became the team's insight. Waiting time ran into years. Rework was constant. Promotions felt arbitrary because nobody else could see what anyone was doing.</p>
+
+    <p>This is Conway's law in its native habitat. The architecture of our systems mirrored the architecture of our teams — and the architecture of our teams could not produce coherent systems, because the team members couldn't see each other's work. We weren't behind on tickets. We were behind on cooperation. The tickets were just the visible smoke.</p>
+
+    <p><strong>The lesson: if two parts of an organisation that depend on each other don't have a working rhythm of cooperation, no amount of engineering will close the gap. The diagnosis is organisational. The prescription has to be too.</strong></p>
+
+    <p>The classifier I now apply:</p>
+
+    <blockquote><p>Before we commission this technology project — are the two or three teams who'd have to cooperate on it actually allowed to, and equipped to? If not, that is the project.</p></blockquote>
+
+    <h2>The application — what changed at the construction-logistics group</h2>
+
+    <p>Years later, I walked into a €1bn-revenue construction-logistics business that had asked me to help modernise its IT. The brief was, on its face, a tech brief. Within a few weeks the diagnosis was the one I'd seen before. There were fifty-plus people in IT and data. The systems and the team structure had grown around each other in a way that meant changes to either were now unaffordable. The board had been told this was a platform problem.</p>
+
+    <p>It wasn't. So we didn't replace the platform.</p>
+
+    <p>We installed a different <em>style of work</em> — across IT, data, and the business functions that depended on them. DevOps was put in place not as a tooling project but as a way of holding work in the open. Git was used as it's meant to be used — as the visible, peer-reviewed memory of how the code became what it is. A kanban board and a light agile rhythm replaced the queue of invisible commitments. Components and patterns became reusable rather than re-implemented every quarter by someone who hadn't seen the previous version. Data was treated as a product, with named owners, defined consumers, and contracts between them. Peer reviews and small, deliberate experiments replaced the heroics of one or two people knowing everything.</p>
+
+    <p>None of this is novel inside a software company. In a construction-logistics group, it was the difference between an IT and data team being a bottleneck and an IT and data team being an instrument. The systems weren't replaced. The work that flowed through them was. That was the point.</p>
+
+    <h2>The classifier I'd give a board</h2>
+
+    <p>If I had four questions to give a board before it commissions a data or AI programme, they would be these.</p>
+
+    <p><em>Where should this truth actually live?</em> If the answer is "upstream of where we'd build it," start there or do not start at all. Compensating in the analytical layer for a gap in the operational stack is the most expensive form of politeness in a business.</p>
+
+    <p><em>Are the two or three teams that would need to cooperate on this currently allowed to, and currently equipped to?</em> If not, the project will absorb the cost of their non-cooperation. The teams are the project. Fix that first.</p>
+
+    <p><em>Who, by name, would be the product owner of the data or the model six months from now?</em> If nobody is willing to put their name to it, the project has no future tense — only a present in which everyone is busy.</p>
+
+    <p><em>What is the smallest decision in the business that would change if this worked?</em> If you cannot answer in a single sentence, the brief is not ready. Send it back.</p>
+
+    <h2>What I now sell</h2>
+
+    <p>I still misread problems. I expect to keep misreading them. The job isn't to be infallible at classification — it's to misread quickly, cheaply, and out loud, and to build engagements where the diagnosis is allowed to shift mid-flight when it should.</p>
+
+    <p>That, more than any platform and more than any model, is what I now sell. It is also why my work is informed by twelve years of getting it wrong at scale, and not only by the parts I would put on a slide.</p>
+
+    <hr class="end-rule" />
+
+    <div class="author-box">
+      <h3>Mirek Umlauf</h3>
+      <p>Fractional Chief Data &amp; AI Officer and Board Advisor. Assistant Professor at FIS VŠE Prague. Former CDO of a global consumer cybersecurity business through two IPOs (NYSE, then London). Founder of Nuefis. Writes mostly about data, AI, and what actually changes inside companies when both arrive.</p>
+      <div class="links">
+        <a href="mailto:mirek@umlauf.tech">Write me</a>
+        <a href="https://cz.linkedin.com/in/umlauf">Follow on LinkedIn</a>
+        <a href="/essays/">All essays</a>
+      </div>
+    </div>
+
+    <div class="more-essays">
+      <h4>More essays</h4>
+      <div class="more-essay">
+        <a href="#">What "AI strategy" actually means when you don't have 100 engineers</a>
+        <div class="me-dek">A working definition for mid-market boards.</div>
+      </div>
+      <div class="more-essay">
+        <a href="#">Why most data warehouses in mid-market manufacturing fail in year two</a>
+        <div class="me-dek">And the three habits that prevent it.</div>
+      </div>
+      <div class="more-essay">
+        <a href="#">CIDNI: the kind of problem your data team can't solve alone</a>
+        <div class="me-dek">A framework for boards.</div>
+      </div>
+    </div>
+
+  </div>
+</article>
+
+<footer>
+  © 2026 Mirek Umlauf · Built for boards, not bots.
+</footer>
+
+</body>
+</html>

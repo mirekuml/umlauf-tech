@@ -287,6 +287,46 @@
     margin: 0;
   }
 
+  /* News — recent talks */
+  .news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .news-card {
+    display: grid;
+    grid-template-columns: 104px 1fr;
+    gap: 4px 24px;
+    padding: 16px 20px;
+    border: 1px solid var(--rule);
+    background: rgba(255,255,255,.55);
+  }
+  .news-card time {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-quiet);
+    padding-top: 4px;
+  }
+  .news-card h4 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.35;
+    margin: 0 0 4px;
+  }
+  .news-card h4 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule); transition: color .15s, border-color .15s; }
+  .news-card h4 a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  .news-card p {
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink-mid);
+    margin: 0;
+  }
+
   /* Engagement list */
   .eng-list {
     list-style: none;
@@ -372,6 +412,16 @@
   }
   footer a { color: #242c44; text-decoration: none; transition: color .15s; border-bottom: 1px solid rgba(26,31,43,.3); }
   footer a:hover { color: #1a1f2b; border-bottom-color: #1a1f2b; }
+  footer a.co {
+    display: block;
+    width: 120px;
+    margin: 2px 0 10px -4px;
+    border-bottom: none;
+    opacity: .92;
+    transition: opacity .15s;
+  }
+  footer a.co:hover { opacity: 1; }
+  footer a.co img { display: block; width: 120px; height: auto; }
   footer .copyright {
     font-family: var(--serif);
     font-style: italic;
@@ -398,6 +448,8 @@
     .prominent p { font-size: 17px; }
     .close-line { font-size: 17px; margin-top: 60px; padding-top: 36px; }
     footer { padding: 48px 24px 32px; margin-top: 60px; }
+    .news-card { grid-template-columns: 1fr; padding: 14px 16px; }
+    .news-card time { padding-top: 0; }
   }
 </style>
 </head>
@@ -409,6 +461,7 @@
     <a href="#expertise">Expertise</a>
     <a href="#work">Work</a>
     <a href="#teaching">Teaching</a>
+    <a href="#news">News</a>
     <a href="mailto:mirek@umlauf.tech">Contact</a>
   </div>
 </nav>
@@ -545,7 +598,42 @@
     </div>
   </section>
 
-  <!-- 6. Close -->
+  <!-- 6. News -->
+  <section id="news">
+    <h2>News · Recent talks</h2>
+    <div class="news-list">
+      <article class="news-card">
+        <time datetime="2026-10-06">6 Oct 2026</time>
+        <div>
+          <h4>“We’ve always done it this way.” Data products with AI that don’t depend on one person</h4>
+          <p>T-Mobile AI Inspiration Days · Prague · internal event</p>
+        </div>
+      </article>
+      <article class="news-card">
+        <time datetime="2026-09-30">30 Sep 2026</time>
+        <div>
+          <h4>Keynote: From Trusted Data to Trusted Agents</h4>
+          <p><a href="https://dama-czech.cz">DAMA Day 2026</a> · Prague University of Economics and Business</p>
+        </div>
+      </article>
+      <article class="news-card">
+        <time datetime="2026-09-25">25 Sep 2026</time>
+        <div>
+          <h4><a href="https://www.nocvedy.cz/udalost/13748-druhy-mozek-jak-si-nenechat-utect-vlastni-myslenky">The Second Brain: how not to let your own thoughts slip away</a></h4>
+          <p>Night of Scientists (Noc vědců) · Faculty of Informatics and Statistics, Prague</p>
+        </div>
+      </article>
+      <article class="news-card">
+        <time datetime="2026-09-15">15 Sep 2026</time>
+        <div>
+          <h4><a href="https://moodlemoot.pragodata.cz/mod/book/view.php?id=5&amp;chapterid=6">VŠE StudyBuddy: agentic AI over data beyond Moodle — from pilot through token economics to a knowledge graph</a></h4>
+          <p>MoodleMoot 2026 · LMS Moodle in higher education</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 7. Close -->
   <div class="close-line">
     <p class="policy">A few clients at a time, by design — and everything documented, so nothing depends on my calendar.</p>
     <p>No newsletter, no funnel. If you're facing a decision like these, write me: <a href="mailto:mirek@umlauf.tech">mirek@umlauf.tech</a></p>
@@ -565,7 +653,8 @@
     </div>
     <div>
       <span class="label">Companies</span>
-      <a href="https://nuefis.com">Nuefis</a>  ·  <a href="https://lololu.cz">LOLOLU</a>
+      <a href="https://nuefis.com" class="co"><img src="/assets/nuefis-logo.png" alt="Nuefis" width="120" height="85"></a>
+      <a href="https://lololu.cz">LOLOLU</a>
     </div>
   </div>
   <div class="copyright">© 2026 Mirek Umlauf · Built for boards, not bots.</div>
